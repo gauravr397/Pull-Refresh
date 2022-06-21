@@ -12,5 +12,18 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView : RecyclerView = findViewById(R.id.Recycleriew)
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+        val item =fetchData()
+
+        val adaptor = RVAdaptor(item)
+        recyclerView.adapter = adaptor
+    }
+
+    fun fetchData() : ArrayList<String>{
+        val list = ArrayList<String>()
+        for(i in 0 until  1){
+            list.add("item $i")
+        }
+        return list
     }
 } 
